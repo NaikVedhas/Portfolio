@@ -1,6 +1,7 @@
 import GradientText from "../store/GradientText";
 import About from "./About";
 import Work from "./Work";
+// import Ribbons from "../store/Ribbons";
 
 const Home = () => {
   return (
@@ -14,11 +15,10 @@ const Home = () => {
       >
         Add a splash of color!
       </GradientText>
-      <Work/>
-      <About/>
-    
+     
+      {/* <Work/>
+      <About/> */}
     </div>
-
   );
 };
 export default Home;
