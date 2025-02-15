@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+/* Ensure full background is black */
+body, html {
+  background-color: black;
+  color: white; /* Ensures text is visible */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Remove extra spacing around root div */
+#root {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+/* Gradient Animation */
 @layer utilities {
     @keyframes gradient {
       0% { background-position: 0% 50%; }
@@ -11,20 +30,19 @@
       background-size: 300% 100%;
       animation: gradient 8s linear infinite;
     }
-  }
+}
 
-
-
-  @keyframes shine {
+/* Shine Animation */
+@keyframes shine {
     0% {
       background-position: 100%;
     }
     100% {
       background-position: -100%;
     }
-  }
+}
   
-  .animate-shine {
+.animate-shine {
     position: relative;
     display: inline-block;
     color: #b5b5b5a4; /* Base text color */
@@ -38,9 +56,9 @@
     -webkit-background-clip: text;
     background-clip: text;
     animation: shine 2s linear infinite;
-  }
+}
   
-  .animate-shine::before {
+.animate-shine::before {
     content: attr(data-text); /* Displays the same text */
     position: absolute;
     top: 0;
@@ -48,9 +66,9 @@
     width: 100%;
     color: inherit; /* Keeps the base text color */
     z-index: -1;
-  }
-  
+}
 
-  .scrollbar-hide::-webkit-scrollbar {
+/* Hide Scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
     display: none;
-  }
+}

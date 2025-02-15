@@ -1,30 +1,22 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import {
   Code,
-  Mic,
-  Trophy,
+  Terminal,
   Github,
   Linkedin,
   Twitter,
-  Coffee,
   Mail,
+  Coffee,
   ChevronDown,
-  Terminal,
 } from "lucide-react";
-import CountUp from "../store/CountUp";
 import GradientText from "../store/GradientText";
 import Work from "./Work";
 import ShinyText from "../store/ShinyText";
+import TiltedCard from "../store/TitltedCard";
 
 const Home = () => {
-  const [loading, setLoading] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => setLoading(false), 4000);
-  //   return () => clearTimeout(timer);
-  // }, []);
 
   const socialLinks = [
     { icon: Github, link: "#", color: "hover:text-purple-500" },
@@ -35,145 +27,147 @@ const Home = () => {
 
   return (
     <div className="bg-black min-h-screen">
-        <div className="container mx-auto px-6 py-12">
-          {/* Hero Section */}
+      <div className="container mx-auto px-6 py-12">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+        >
+          {/* Left Content */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-8 space-y-8"
           >
-            {/* Left Content */}
             <motion.div
-              initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="lg:col-span-7 space-y-8"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="space-y-6"
             >
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2 }}
-                className="space-y-2"
-              >
-                <div className="flex items-center space-x-2">
-                  <Terminal className="text-blue-500" />
-                  <p className="text-blue-500 font-mono">Hello World!</p>
-                </div>
-                <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-                  Between Logic & Creativity —
-                  <span className="text-transparent text-8xl bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
-                    <GradientText
-                      colors={[
-                        "#40ffaa",
-                        "#4079ff",
-                        "#40ffaa",
-                        "#4079ff",
-                        "#40ffaa",
-                      ]}
-                      animationSpeed={3}
-                      showBorder={false}
-                      className=""
-                    >
-                      That's Where I Build.
-                    </GradientText>
-                  </span>
-                </h1>
-                <p className="text-xl text-gray-400 italic mt-4">
-                  <ShinyText
-                    text={`"Love building scalable products & mentoring developers"`}
-                    disabled={false}
-                    speed={3}
-                    className=""
-                  />
-                </p>
+              <div className="flex items-center space-x-2">
+                <Terminal className="text-blue-500" />
+                <p className="text-blue-500 font-mono">Hello World!</p>
+              </div>
 
-                {/* Role Tags */}
+              {/* Role Tags - Redesigned as floating pills */}
+              <div className="flex flex-wrap gap-4 mb-6">
                 <motion.div
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.3 }}
-                  className="flex flex-wrap gap-4 mt-6"
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg text-white shadow-lg shadow-blue-500/20"
                 >
-                  <span className="px-4 py-2  text-blue-500 rounded-full"></span>
-                  <span className="px-4 py-2 bg-green-500/10 text-green-500 rounded-full">
-                    Blockchain Head
-                  </span>
-                  <span className="px-4 py-2 bg-yellow-500/10 text-yellow-500 rounded-full">
-                    Web3 Speaker
-                  </span>
+                  Full Stack Developer
                 </motion.div>
-              </motion.div>
-
-              {/* Social Links */}
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="flex space-x-6"
-              >
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={index}
-                    href={social.link}
-                    whileHover={{ y: -5 }}
-                    className={`text-gray-400 transition-colors ${social.color}`}
-                  >
-                    <social.icon size={24} />
-                  </motion.a>
-                ))}
-              </motion.div>
-
-              {/* CTA Button */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full text-white font-semibold flex items-center space-x-2 hover:shadow-lg hover:shadow-blue-500/25 transition-shadow"
-              >
-                <Coffee size={20} />
-                <span>Let's Connect!</span>
-              </motion.button>
-            </motion.div>
-
-            {/* Right Content - Image */}
-            <motion.div
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="lg:col-span-5 relative"
-              onHoverStart={() => setIsHovered(true)}
-              onHoverEnd={() => setIsHovered(false)}
-            >
-              <motion.div
-                animate={{
-                  rotate: isHovered ? 5 : 0,
-                  scale: isHovered ? 1.02 : 1,
-                }}
-                transition={{ duration: 0.3 }}
-                className="relative z-10"
-              >
-                <img
-                  src="/1.jpg"
-                  alt="Vedhas Naik"
-                  className="w-full aspect-[3/4] object-cover rounded-2xl shadow-2xl"
-                />
                 <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: isHovered ? 1 : 0 }}
-                  className="absolute inset-0 bg-gradient-to-t from-blue-500/20 to-purple-500/20 rounded-2xl"
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
+                  className="px-4 py-2 bg-gradient-to-r from-purple-600 to-purple-400 rounded-lg text-white shadow-lg shadow-purple-500/20"
+                >
+                  Blockchain Enthusiast
+                </motion.div>
+                <motion.div
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
+                  className="px-4 py-2 bg-gradient-to-r from-purple-600 to-purple-400 rounded-lg text-white shadow-lg shadow-purple-500/20"
+                >
+                  Web3 Speaker
+                </motion.div>
+              </div>
+
+              <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
+                Between Logic & Creativity —
+                <span className="text-transparent text-8xl bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+                  <GradientText
+                    colors={[
+                      "#32ffc3",
+                      "#4088ff",
+                      "#40ffaa",
+                      "#2fd5ff",
+                      "#1f69ff",
+                      "#1f69ff",
+                      "#2fd5ff",
+                      "#40ffaa",
+                      "#4088ff",
+                      "#32ffc3",
+                    ]}
+                    animationSpeed={4}
+                    showBorder={false}
+                  >
+                    That's Where I Build.
+                  </GradientText>
+                </span>
+              </h1>
+
+              <p className="text-xl text-gray-400 italic">
+                <ShinyText
+                  text={`"Love building scalable products & mentoring developers"`}
+                  disabled={false}
+                  speed={3}
                 />
-              </motion.div>
+              </p>
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="flex space-x-6"
+            >
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={index}
+                  href={social.link}
+                  whileHover={{ y: -5, scale: 1.1 }}
+                  className={`text-gray-400 transition-colors ${social.color}`}
+                >
+                  <social.icon size={24} />
+                </motion.a>
+              ))}
             </motion.div>
           </motion.div>
 
-          {/* Scroll Indicator */}
+          {/* Right Content - Redesigned Image */}
           <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-            className="flex justify-center mt-12"
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-4 relative"
+            onHoverStart={() => setIsHovered(true)}
+            onHoverEnd={() => setIsHovered(false)}
           >
-            <ChevronDown className="text-gray-400 w-8 h-8" />
+            <div className="" />
+            <TiltedCard
+              imageSrc="/1.jpg"
+              altText={"Vedhas Naik"}
+              captionText={"Vedhas Naik"}
+              containerHeight="400px"
+              containerWidth="400px"
+              imageHeight="400px"
+              imageWidth="400px"
+              rotateAmplitude={12}
+              scaleOnHover={1.2}
+              showMobileWarning={false}
+              showTooltip={true}
+              displayOverlayContent={true}
+              overlayContent={
+                <p className="tilted-card-demo-text ">Vedhas Naik</p>
+              }
+            />
           </motion.div>
-        </div>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="flex justify-center mt-12"
+        >
+          <ChevronDown className="text-gray-400 w-8 h-8" />
+        </motion.div>
+      </div>
       <Work />
     </div>
   );
