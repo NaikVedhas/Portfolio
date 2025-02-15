@@ -1,8 +1,6 @@
 import GradientText from "../store/GradientText";
-import Hyperspeed from '../store/HyperSpeed';
-
-// the component will fill the height/width of its parent container, edit the CSS to change this
-// the options below are the default values
+import About from "./About";
+import Work from "./Work";
 
 const Home = () => {
   return (
@@ -16,8 +14,8 @@ const Home = () => {
       >
         Add a splash of color!
       </GradientText>
-    
-
+      <Work/>
+      <About/>
     
     </div>
 
