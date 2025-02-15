@@ -15,15 +15,16 @@ import {
 import CountUp from "../store/CountUp";
 import GradientText from "../store/GradientText";
 import Work from "./Work";
+import ShinyText from "../store/ShinyText";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 4000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => setLoading(false), 4000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   const socialLinks = [
     { icon: Github, link: "#", color: "hover:text-purple-500" },
@@ -34,25 +35,6 @@ const Home = () => {
 
   return (
     <div className="bg-black min-h-screen">
-      {loading ? (
-        <div className="h-screen flex items-center justify-center">
-          <GradientText
-            colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-            animationSpeed={3}
-            showBorder={false}
-            className="text-9xl"
-          >
-            <CountUp
-              from={0}
-              to={100}
-              separator=","
-              direction="up"
-              duration={1}
-              className="text-9xl"
-            />
-          </GradientText>
-        </div>
-      ) : (
         <div className="container mx-auto px-6 py-12">
           {/* Hero Section */}
           <motion.div
@@ -79,7 +61,7 @@ const Home = () => {
                 </div>
                 <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
                   Between Logic & Creativity —
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+                  <span className="text-transparent text-8xl bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
                     <GradientText
                       colors={[
                         "#40ffaa",
@@ -97,7 +79,12 @@ const Home = () => {
                   </span>
                 </h1>
                 <p className="text-xl text-gray-400 italic mt-4">
-                  "This is me, my life"
+                  <ShinyText
+                    text={`"Love building scalable products & mentoring developers"`}
+                    disabled={false}
+                    speed={3}
+                    className=""
+                  />
                 </p>
 
                 {/* Role Tags */}
@@ -107,9 +94,7 @@ const Home = () => {
                   transition={{ delay: 0.3 }}
                   className="flex flex-wrap gap-4 mt-6"
                 >
-                  <span className="px-4 py-2 bg-blue-500/10 text-blue-500 rounded-full">
-                    Full Stack Developer
-                  </span>
+                  <span className="px-4 py-2  text-blue-500 rounded-full"></span>
                   <span className="px-4 py-2 bg-green-500/10 text-green-500 rounded-full">
                     Blockchain Head
                   </span>
@@ -189,7 +174,6 @@ const Home = () => {
             <ChevronDown className="text-gray-400 w-8 h-8" />
           </motion.div>
         </div>
-      )}
       <Work />
     </div>
   );

@@ -13,19 +13,43 @@
     }
   }
 
-/* 
-  html, body, #root {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
+
+
+  @keyframes shine {
+    0% {
+      background-position: 100%;
+    }
+    100% {
+      background-position: -100%;
+    }
   }
   
-  #root {
-    min-height: 100vh;
+  .animate-shine {
     position: relative;
-  } */
+    display: inline-block;
+    color: #b5b5b5a4; /* Base text color */
+    background-image: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.8) 50%,
+      rgba(255, 255, 255, 0) 60%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine 2s linear infinite;
+  }
+  
+  .animate-shine::before {
+    content: attr(data-text); /* Displays the same text */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: inherit; /* Keeps the base text color */
+    z-index: -1;
+  }
+  
 
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
