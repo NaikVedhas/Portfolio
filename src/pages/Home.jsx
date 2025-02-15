@@ -70,7 +70,7 @@ const Home = () => {
                 <motion.div
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
-                  className="px-4 py-2 bg-gradient-to-r from-purple-600 to-purple-400 rounded-lg text-white shadow-lg shadow-purple-500/20"
+                  className="px-4 py-2 bg-gradient-to-r from-fuchsia-600 to-pink-400 rounded-lg text-white shadow-lg shadow-pink-500/20"
                 >
                   Web3 Speaker
                 </motion.div>
