@@ -26,3 +26,7 @@
     min-height: 100vh;
     position: relative;
   } */
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
