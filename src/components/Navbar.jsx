@@ -3,7 +3,7 @@ import Magnet from "../store/Magnet";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-center text-gray-300 italic ">
+    <div className="flex justify-center text-gray-300 italic  ">
       <Magnet
         padding={100}
         disabled={false}
