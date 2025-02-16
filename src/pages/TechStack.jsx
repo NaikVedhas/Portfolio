@@ -1,4 +1,9 @@
 import React from "react";
+import { useRef } from 'react';
+import Crosshair from '../store/Crosshair';
+import PixelTrail from '../store/PixelTrail';
+
+
 
 const techStack = [
   { name: "HTML", icon: "https://cdn.simpleicons.org/html5" },
@@ -32,9 +37,16 @@ const techStack = [
 
 
 const TechStack = () => {
-  return (
+const containerRef = useRef(null);
+    
+  
+  
+    return (
     <section className="bg-black text-white py-10">
       <h2 className="text-3xl font-bold text-center mb-6">My Tech Stack</h2>
+      {/* <div ref={containerRef} style={{ height: '300px', overflow: 'hidden' }}> */}
+        {/* <Crosshair containerRef={containerRef} color='#ffffff'/>  */}
+       
       <div className="flex flex-wrap justify-center gap-4 px-4">
         {techStack.map((tech, index) => (
           <div
@@ -46,6 +58,8 @@ const TechStack = () => {
           </div>
         ))}
       </div>
+      {/* </div> */}
+
     </section>
   );
 };

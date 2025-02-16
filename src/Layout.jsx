@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hyperspeed from './store/HyperSpeed';
-
+import CursorTrail from "./components/CursorTrail";
 const Layout = () => {
   const [loading, setLoading] = useState(true);
   const [showHyperspace, setShowHyperspace] = useState(false);
@@ -134,7 +134,7 @@ const Layout = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-          >
+          > <CursorTrail />
             <Navbar />
             <Outlet />
             <Footer />
