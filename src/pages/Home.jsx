@@ -14,6 +14,7 @@ import GradientText from "../store/GradientText";
 import Work from "./Work";
 import ShinyText from "../store/ShinyText";
 import TiltedCard from "../store/TitltedCard";
+import TechStack from "./Techstack";
 
 const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -46,10 +47,7 @@ const Home = () => {
               transition={{ delay: 0.2 }}
               className="space-y-6"
             >
-              <div className="flex items-center space-x-2">
-                <Terminal className="text-blue-500" />
-                <p className="text-blue-500 font-mono">Hello World!</p>
-              </div>
+
 
               {/* Role Tags - Redesigned as floating pills */}
               <div className="flex flex-wrap gap-4 mb-6">
@@ -168,6 +166,7 @@ const Home = () => {
           <ChevronDown className="text-gray-400 w-8 h-8" />
         </motion.div>
       </div>
+      <TechStack/>
       <Work />
     </div>
   );
