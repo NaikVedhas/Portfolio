@@ -69,7 +69,7 @@ const TechStack = () => {
           <p className="mb-4 text-xs uppercase tracking-widest text-white/70 md:text-sm">
             I constantly learn
           </p>
-          <span>My tech stack</span>
+          <span>My Tech Stack</span>
           <span className="text-colorfull font-nyght tracking-wide "></span>
         </h2>
 

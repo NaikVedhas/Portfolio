@@ -28,7 +28,7 @@ const ProjectCard = ({ p }) => {
       <div className="md:w-2/5 p-6 space-y-4">
         {/* Project Name with GitHub Icon & Link */}
         <h3 className="text-2xl font-bold text-white flex items-center space-x-2">
-          <Award size={25} className={`text-${p.color}`} />
+          <Award size={25} className={`${p.color}`} />
           <a href={p.github} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-white hover:text-gray-300 transition">
             <p className="flex space-x-20">
 
@@ -47,7 +47,7 @@ const ProjectCard = ({ p }) => {
           <ul className="space-y-1 text-gray-600">
             {p.features.map((feature, index) => (
               <li key={index} className={`flex items-center space-x-2 `}>
-                <Star size={18} className={`text-${p.color}`} />
+                <Star size={18} className={`${p.color}`} />
                 <span>{feature}</span>
               </li>
             ))}
@@ -59,7 +59,7 @@ const ProjectCard = ({ p }) => {
           <h4 className="text-lg font-semibold mb-2">Tech Stack</h4>
           <div className="flex flex-wrap gap-2">
             {p.tech.map((tech, index) => (
-              <span key={index} className={`px-3 py-1 border text-${p.color} rounded-full text-sm font-medium`}>
+              <span key={index} className={`px-3 py-1 border ${p.color} rounded-full text-sm font-medium`}>
                 <p className="text-white">
                 {tech}
 

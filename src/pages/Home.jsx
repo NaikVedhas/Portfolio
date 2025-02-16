@@ -28,7 +28,7 @@ const Home = () => {
 
   return (
     <div className="bg-black min-h-screen">
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-6 pt-12">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -185,7 +185,7 @@ const Home = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="flex justify-center mt-12"
+          className="flex justify-center "
         >
           <ChevronDown className="text-gray-400 w-8 h-8" />
         </motion.div>
