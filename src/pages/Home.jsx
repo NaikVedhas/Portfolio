@@ -190,8 +190,8 @@ const Home = () => {
           <ChevronDown className="text-gray-400 w-8 h-8" />
         </motion.div>
       </div>
-      <Work />
       <TechStack />
+      <Work />
     </div>
   );
 };
