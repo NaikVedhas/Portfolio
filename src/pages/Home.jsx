@@ -47,8 +47,6 @@ const Home = () => {
               transition={{ delay: 0.2 }}
               className="space-y-6"
             >
-
-
               {/* Role Tags - Redesigned as floating pills */}
               <div className="flex flex-wrap gap-4 mb-6">
                 <motion.div
@@ -74,9 +72,10 @@ const Home = () => {
                 </motion.div>
               </div>
 
-              <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-                Between Logic & Creativity —
-                <span className="text-transparent text-8xl bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+              <h1 className="text-5xl md:text-8xl font-bold text-white leading-tight">
+                <div>Between&nbsp; Logic&nbsp; &</div>
+                <div className="flex items-center gap-2">
+                  <span>Creativity —</span>
                   <GradientText
                     colors={[
                       "#32ffc3",
@@ -92,13 +91,38 @@ const Home = () => {
                     ]}
                     animationSpeed={4}
                     showBorder={false}
+                    className="text-9xl"
                   >
-                    That's Where I Build.
+                    That's
                   </GradientText>
-                </span>
+                </div>
+                <GradientText
+                  colors={[
+                    "#32ffc3",
+                    "#4088ff",
+                    "#40ffaa",
+                    "#2fd5ff",
+                    "#1f69ff",
+                    "#1f69ff",
+                    "#2fd5ff",
+                    "#40ffaa",
+                    "#4088ff",
+                    "#32ffc3",
+                  ]}
+                  animationSpeed={4}
+                  showBorder={false}
+                  className="text-9xl inline-block"
+                >
+                  Where I Build!
+                </GradientText>
               </h1>
 
               <p className="text-xl text-gray-400 italic">
+                <ShinyText
+                  text={`"Blockchain Head @Community of Coders || Third-year Student at VJTI College, Mumbai"`}
+                  disabled={false}
+                  speed={3}
+                />
                 <ShinyText
                   text={`"Love building scalable products & mentoring developers"`}
                   disabled={false}
@@ -166,7 +190,7 @@ const Home = () => {
           <ChevronDown className="text-gray-400 w-8 h-8" />
         </motion.div>
       </div>
-      <TechStack/>
+      <TechStack />
       <Work />
     </div>
   );
