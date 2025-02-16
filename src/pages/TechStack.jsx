@@ -1,48 +1,52 @@
-import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3, FaGit, FaEthereum } from "react-icons/fa";
-import { SiExpress, SiJavascript, SiMongodb, SiMysql, SiTailwindcss, SiDaisyui, SiIpfs, SiSolidity, SiPostman, SiWeb3Dotjs, SiEthers, SiWagmi, SiHardhat, SiRemix, SiSocketdotio, SiCplusplus, SiTanstackquery } from "react-icons/si";
-import PixelCard from '../store/PixelCard';
+import React from "react";
 
 const techStack = [
-  { name: "React.js", icon: <FaReact className="text-[#61DAFB]" /> },
-  { name: "Node.js", icon: <FaNodeJs className="text-[#339933]" /> },
-  { name: "Express.js", icon: <SiExpress className="text-white" /> },
-  { name: "JavaScript", icon: <SiJavascript className="text-[#F7DF1E]" /> },
-  { name: "Python", icon: <FaPython className="text-[#3776AB]" /> },
-  { name: "TanStack Query", icon: <SiTanstackquery className="text-[#FF4154]" /> },
-  { name: "Socket.io", icon: <SiSocketdotio className="text-white" /> },
-  { name: "Solidity", icon: <SiSolidity className="text-white" /> },
-  { name: "Web3.js", icon: <SiWeb3Dotjs className="text-[#F16822]" /> },
-  { name: "Ethers.js", icon: <SiEthers className="text-[#2535a0]" /> },
-  { name: "Wagmi", icon: <SiWagmi className="text-[#2d3748]" /> },
-  { name: "Hardhat", icon: <SiHardhat className="text-[#FFF100]" /> },
-  { name: "TailwindCSS", icon: <SiTailwindcss className="text-[#38B2AC]" /> },
-  { name: "DaisyUI", icon: <SiDaisyui className="text-[#5A0EF8]" /> },
-  { name: "C++", icon: <SiCplusplus className="text-[#00599C]" /> },
-  { name: "HTML5", icon: <FaHtml5 className="text-[#E34F26]" /> },
-  { name: "CSS3", icon: <FaCss3 className="text-[#1572B6]" /> },
-  { name: "MySQL", icon: <SiMysql className="text-[#4479A1]" /> },
-  { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
-  { name: "IPFS", icon: <SiIpfs className="text-[#65C2CB]" /> },
-  { name: "Remix IDE", icon: <SiRemix className="text-white" /> },
-  { name: "Postman", icon: <SiPostman className="text-[#FF6C37]" /> },
-  { name: "Git", icon: <FaGit className="text-[#F05032]" /> },
+  { name: "HTML", icon: "https://cdn.simpleicons.org/html5" },
+  { name: "CSS", icon: "https://cdn.simpleicons.org/css3" },
+  { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript" },
+  { name: "ReactJS", icon: "https://cdn.simpleicons.org/react" },
+  { name: "NodeJS", icon: "https://cdn.simpleicons.org/nodedotjs" },
+  { name: "ExpressJS", icon: "https://cdn.simpleicons.org/express"},
+  { name: "Python", icon: "https://cdn.simpleicons.org/python" },
+  { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus" },
+  { name: "Tanstack Query", icon: "https://cdn.simpleicons.org/reactquery" },
+  { name: "Socket.io", icon: "https://cdn.simpleicons.org/socketdotio" },
+  { name: "Solidity", icon: "https://cdn.simpleicons.org/solidity" },
+  { name: "Web3.js", icon: "https://cdn.simpleicons.org/web3dotjs" },
+  { name: "Wagmi", icon: "https://cdn.simpleicons.org/wagmi" },
+  { name: "Daisy Ui", icon: "https://cdn.simpleicons.org/tailwindcss/daisyui" },
+  { name: "Ether.js", icon: "https://cdn.simpleicons.org/ethers" },
+  { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/tailwindcss-plain.svg" },
+  { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/mongodb-original.svg" },
+  { name: "MySQL", icon: "https://cdn.simpleicons.org/mysql/mysql-original.svg" },
+  { name: "IPFS", icon: "https://cdn.simpleicons.org/ipfs" },
+  { name: "Git", icon: "https://cdn.simpleicons.org/git/git-original.svg" },
+  { name: "GitHub", icon: "https://cdn.simpleicons.org/github/github-original.svg" },
+  { name: "Postman", icon: "https://cdn.simpleicons.org/postman/postman-original.svg" },
+  { name: "Hardhat", icon: "/Hardhat.png" },
+  { name: "Remix IDE", icon: "/remixide.png" },
+  { name: "Metamask", icon: "/metamask.png" },
+  { name: "Pinata", icon: "/pinata.svg" },
 ];
+
+
 
 const TechStack = () => {
   return (
-    <div className="text-center p-6">
-      <h1 className="text-4xl font-bold text-white mb-6">🚀 My Tech Stack</h1>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+    <section className="bg-black text-white py-10">
+      <h2 className="text-3xl font-bold text-center mb-6">My Tech Stack</h2>
+      <div className="flex flex-wrap justify-center gap-4 px-4">
         {techStack.map((tech, index) => (
-          <PixelCard key={index} variant="default" className="flex flex-col items-center justify-center p-4">
-            <div style={{position:'absolute'}}>
-            <div className="text-5xl">{tech.icon}</div>
-            <p className="mt-2 text-lg text-white font-medium">{tech.name}</p>
-            </div>
-          </PixelCard>
+          <div
+            key={index}
+            className="flex items-center gap-2 px-4 py-2 bg-neutral-800 rounded-lg shadow-md"
+          >
+            <img src={tech.icon} alt={tech.name} className="w-6 h-6" />
+            <span className="text-lg">{tech.name}</span>
+          </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
