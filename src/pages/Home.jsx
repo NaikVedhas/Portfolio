@@ -20,10 +20,10 @@ const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   const socialLinks = [
-    { icon: Github, link: "#", color: "hover:text-purple-500" },
-    { icon: Linkedin, link: "#", color: "hover:text-blue-500" },
+    { icon: Github, link: "https://github.com/NaikVedhas", color: "hover:text-purple-500" },
+    { icon: Linkedin, link: "https://www.linkedin.com/in/vedhas-naik-005378253/", color: "hover:text-blue-500" },
     { icon: Twitter, link: "#", color: "hover:text-sky-500" },
-    { icon: Mail, link: "#", color: "hover:text-red-500" },
+    { icon: Mail, link: "mailto:vedhasnaik121@gmail.com", color: "hover:text-red-500" },
   ];
 
   return (
