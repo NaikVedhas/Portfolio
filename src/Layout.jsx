@@ -19,7 +19,7 @@ const Layout = () => {
     // Complete loading after 10 seconds
     const loadingTimer = setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 15000);
 
     // Show hyperspace after text moves up
     const hyperspaceTimer = setTimeout(() => {
@@ -130,11 +130,13 @@ const Layout = () => {
             </AnimatePresence>
           </motion.div>
         ) : (
+          
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-          > <CursorTrail />
+          > 
+          <CursorTrail />
             <Navbar />
             <Outlet />
             <Footer />
