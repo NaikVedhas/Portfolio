@@ -1,23 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const techStack = [
-  { name: "HTML", icon: "https://cdn.simpleicons.org/html5" },
-  { name: "CSS", icon: "https://cdn.simpleicons.org/css3" },
   { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript" },
   { name: "ReactJS", icon: "https://cdn.simpleicons.org/react" },
   { name: "NodeJS", icon: "https://cdn.simpleicons.org/nodedotjs" },
   { name: "ExpressJS", icon: "https://cdn.simpleicons.org/express" },
-  { name: "Python", icon: "https://cdn.simpleicons.org/python" },
   { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus" },
+  { name: "Python", icon: "https://cdn.simpleicons.org/python" },
+  { name: "HTML", icon: "https://cdn.simpleicons.org/html5" },
+  { name: "CSS", icon: "https://cdn.simpleicons.org/css3" },
+  { name: "Tanstack Query", icon: "https://cdn.simpleicons.org/reactquery" },
+  { name: "Socket.io", icon: "https://cdn.simpleicons.org/socketdotio" },
+  { name: "Solidity", icon: "https://cdn.simpleicons.org/solidity" },
+  { name: "Web3.js", icon: "https://cdn.simpleicons.org/web3dotjs" },
   {
     name: "Tailwind CSS",
     icon: "https://cdn.simpleicons.org/tailwindcss/tailwindcss-plain.svg",
   },
   { name: "Git", icon: "https://cdn.simpleicons.org/git/git-original.svg" },
-  { name: "Tanstack Query", icon: "https://cdn.simpleicons.org/reactquery" },
-  { name: "Socket.io", icon: "https://cdn.simpleicons.org/socketdotio" },
-  { name: "Solidity", icon: "https://cdn.simpleicons.org/solidity" },
-  { name: "Web3.js", icon: "https://cdn.simpleicons.org/web3dotjs" },
   { name: "Wagmi", icon: "https://cdn.simpleicons.org/wagmi" },
   { name: "IPFS", icon: "https://cdn.simpleicons.org/ipfs" },
   {
@@ -44,12 +44,32 @@ const techStack = [
 ];
 
 const TechStack = () => {
+  const [rotation, setRotation] = useState(64.825); // Initial rotation
+
+  useEffect(() => {
+    const handleScroll = (e) => {
+      if (e.deltaY > 0) {
+        // Scrolling down (clockwise)
+        setRotation((prev) => prev + 15); // Rotate clockwise
+      } else {
+        // Scrolling up (counter-clockwise)
+        setRotation((prev) => prev - 15); // Rotate counter-clockwise
+      }
+    };
+
+    window.addEventListener("wheel", handleScroll);
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+    };
+  }, []);
+
   return (
     <section className="bg-black text-white py-10 mb-10">
       <div className="relative mx-auto size-fit overflow-hidden">
         <div
           className="relative inset-x-0 -bottom-12 mx-auto size-[300px] md:-bottom-20 md:size-[380px]"
-          style={{ transform: "rotate(64.825deg)" }} 
+          style={{ transform: `rotate(${rotation}deg)` }} // Apply dynamic rotation
         >
           <img
             src="/image.png"
@@ -76,7 +96,7 @@ const TechStack = () => {
         <div className="absolute inset-0 z-20 bg-gradient-to-b from-transparent via-black/5 to-black"></div>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-4 px-4">
+      <div className="flex flex-wrap justify-center gap-4 px-50">
         {techStack.map((tech, index) => (
           <div
             key={index}
