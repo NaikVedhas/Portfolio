@@ -47,16 +47,16 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="py-16">
+    <div className="py-16 mt-5">
       <h2 className="font-bold text-center ">
       <GradientText
         colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
         animationSpeed={3}
         showBorder={false}
-        className="custom-class text-6xl italic p-1"
+        className="custom-class text-6xl italic py-1"
       >
         
-       Projects
+       Featured Projects
       </GradientText>
         </h2>
       <div className="space-y-2 ">

@@ -52,7 +52,7 @@ const About = () => {
 
   return (
     <motion.div 
-      className="flex items-center justify-center ml-15 px-8 py-16"
+      className="flex items-center justify-center ml-15 px-8 py-16 mt-15"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
