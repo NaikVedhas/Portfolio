@@ -1,5 +1,6 @@
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const Projects = () => {
   const data = [
@@ -25,7 +26,7 @@ const Projects = () => {
     },
     {
       name: "FaikBlock",
-      desc: "Directed a team of 4 during the Inheritance ’23 Mentorship Program to create a decentralized solution for authenticating real-world products, resulting in successful authentications via QR code technology.",
+      desc: "Directed a team of 4 during the Inheritance '23 Mentorship Program to create a decentralized solution for authenticating real-world products, resulting in successful authentications via QR code technology.",
       tech: ["Solidity", "Wagmi", "ConnectKit", "React.js", "Metamask", "Tailwind CSS", "HTML"],
       features: ["this is amazing", "implemented new tech"],
       github: "https://github.com/NaikVedhas/Faik-Block",
@@ -35,22 +36,42 @@ const Projects = () => {
     },
   ];
 
+  useEffect(() => {
+    // Add smooth scrolling behavior to the document
+    document.documentElement.style.scrollBehavior = "smooth";
+    
+    return () => {
+      document.documentElement.style.scrollBehavior = "auto";
+    };
+  }, []);
+
   return (
-    <motion.div className="h-screen overflow-y-scroll snap-y snap-mandatory scrollbar-hide" >
-        
-      {data.map((p, i) => (
-        <motion.div
-          key={i}
-          className="h-screen flex items-center justify-center snap-center"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -50 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
-        >
-          <ProjectCard p={p} />
-        </motion.div>
-      ))}
-    </motion.div>
+    <div className="py-16">
+      <h2 className="text-4xl font-bold text-center mb-12">Projects</h2>
+      <div className="space-y-2 ">
+        {data.map((p, i) => (
+          <motion.div
+            key={i}
+            className="min-h-screen flex items-center justify-center px-4"
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ 
+              opacity: 1, 
+              y: 0,
+              transition: {
+                duration: 1,
+                ease: "easeOut"
+              }
+            }}
+            viewport={{ 
+              once: false,
+              margin: "-20%" // Start animation when element is 20% in view
+            }}
+          >
+            <ProjectCard p={p} />
+          </motion.div>
+        ))}
+      </div>
+    </div>
   );
 };
 

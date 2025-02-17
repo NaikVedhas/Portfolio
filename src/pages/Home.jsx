@@ -16,6 +16,7 @@ import ShinyText from "../store/ShinyText";
 import TiltedCard from "../store/TitltedCard";
 import TechStack from "./Techstack";
 import About from "./About";
+import Projects from "../components/Projects";
 
 const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -192,7 +193,7 @@ const Home = () => {
         </motion.div>
       </div>
       <TechStack />
-      <Work />
+      <Projects />
       <About/>
     </div>
   );
