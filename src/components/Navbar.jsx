@@ -12,8 +12,8 @@ const Navbar = () => {
   const navItems = [
     { path: "/", label: "Home" },
     { path: "/projects", label: "Work" },
-    { path: "/about", label: "About" },
     { path: "/speaker", label: "Talks" },
+    { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" }
   ];
 
@@ -22,7 +22,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800"
+      className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800 italic"
     >
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-center items-center h-16">
