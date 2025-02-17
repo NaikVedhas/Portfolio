@@ -1,6 +1,7 @@
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "../components/ProjectCard";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import GradientText from "../store/GradientText";
 
 const Projects = () => {
   const data = [
@@ -47,7 +48,17 @@ const Projects = () => {
 
   return (
     <div className="py-16">
-      <h2 className="text-4xl font-bold text-center mb-12">Projects</h2>
+      <h2 className="font-bold text-center ">
+      <GradientText
+        colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+        animationSpeed={3}
+        showBorder={false}
+        className="custom-class text-6xl italic p-1"
+      >
+        
+       Projects
+      </GradientText>
+        </h2>
       <div className="space-y-2 ">
         {data.map((p, i) => (
           <motion.div

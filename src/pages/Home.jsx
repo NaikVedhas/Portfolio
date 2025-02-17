@@ -1,22 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  Code,
-  Terminal,
-  Github,
-  Linkedin,
-  Twitter,
-  Mail,
-  Coffee,
-  ChevronDown,
-} from "lucide-react";
+import { Code,Terminal,Github,Linkedin,Twitter,Mail,ChevronDown} from "lucide-react";
 import GradientText from "../store/GradientText";
-import Work from "./Work";
 import ShinyText from "../store/ShinyText";
 import TiltedCard from "../store/TitltedCard";
 import TechStack from "./Techstack";
 import About from "./About";
-import Projects from "../components/Projects";
+import Projects from "./Projects";
+import Speaker from "./Speaker";
 
 const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -192,8 +183,10 @@ const Home = () => {
           <ChevronDown className="text-gray-400 w-8 h-8" />
         </motion.div>
       </div>
-      <TechStack />
+      <Speaker/>
       <Projects />
+      <TechStack />
+
       <About/>
     </div>
   );

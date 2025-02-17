@@ -18,7 +18,7 @@ const Navbar = () => {
         magnetStrength={5}
         className="p-2 m-2"
       >
-        <Link to={`/work`}>Work</Link>
+        <Link to={`/projects`}>Work</Link>
       </Magnet>
       <Magnet
         padding={100}
