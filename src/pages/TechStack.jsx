@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import ScrollVelocity from "../store/ScrollVelocity";
+
 const techStack = [
   { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript" },
   { name: "ReactJS", icon: "https://cdn.simpleicons.org/react" },
@@ -106,6 +108,14 @@ const TechStack = () => {
             <span className="text-lg">{tech.name}</span>
           </div>
         ))}
+      </div>
+
+      <div className="mt-18">
+        <ScrollVelocity
+          texts={["Scalable ", "Responsive ", "Interactive ", "Secure "]}
+          velocity={100}
+          className="custom-scroll-text mt-1"
+        />
       </div>
     </section>
   );
