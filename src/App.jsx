@@ -6,6 +6,7 @@ import Contact from './pages/Contact'
 import NotFound from "./pages/NotFound";
 import About from './pages/About'
 import Projects from './pages/Projects'
+import SpeakerSession from './pages/Speaker'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Route path='/' element={<Layout/>}>
         <Route path='' element={<Home/>}/>
         <Route path='projects' element={<Projects/>}/>
+        <Route path='speaker' element={<SpeakerSession/>}/>
         <Route path='about' element={<About/>}/>
         <Route path='contact' element={<Contact/>}/>
         <Route  path='*' element={<NotFound/>}/>
