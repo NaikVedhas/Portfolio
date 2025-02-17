@@ -19,7 +19,7 @@ const Layout = () => {
     // Complete loading after 10 seconds
     const loadingTimer = setTimeout(() => {
       setLoading(false);
-    }, 10000);
+    }, 1000);
 
     // Show hyperspace after text moves up
     const hyperspaceTimer = setTimeout(() => {

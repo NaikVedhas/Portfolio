@@ -15,6 +15,7 @@ import Work from "./Work";
 import ShinyText from "../store/ShinyText";
 import TiltedCard from "../store/TitltedCard";
 import TechStack from "./Techstack";
+import About from "./About";
 
 const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -192,6 +193,7 @@ const Home = () => {
       </div>
       <TechStack />
       <Work />
+      <About/>
     </div>
   );
 };
