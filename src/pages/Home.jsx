@@ -20,7 +20,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-black min-h-screen mt-15">
       <div className="container mx-auto px-6 pt-12">
         <motion.div
           initial={{ opacity: 0 }}
