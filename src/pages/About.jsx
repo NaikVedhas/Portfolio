@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import {   Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { FaXTwitter as X } from "react-icons/fa6";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import PixelTransition from "../store/PixelTransition";
@@ -53,22 +53,22 @@ const About = () => {
 
   return (
     <motion.div 
-      className="flex items-center justify-center ml-15 px-8 py-16 mt-15"
+      className="flex flex-col lg:flex-row items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 mt-8 sm:mt-12 lg:mt-15"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
       {/* Left Side - Text Content */}
-      <div className="w-3/5 pr-12 space-y-8">
+      <div className="w-full lg:w-3/5 lg:pr-12 space-y-6 sm:space-y-8 mb-8 lg:mb-0">
         <motion.h1 
           variants={itemVariants}
-          className="text-xl font-semibold text-gray-500"
+          className="text-lg sm:text-xl font-semibold text-gray-500"
         >
           More About Me
         </motion.h1>
 
-        <motion.div variants={itemVariants} className="space-y-6">
-          <h2 className="text-7xl font-bold ">
+        <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold">
             <GradientText
               colors={[
                 "#32ffc3",
@@ -89,7 +89,7 @@ const About = () => {
             </GradientText>
           </h2>
 
-          <div className="text-lg italic text-gray-400 space-y-4 ml-6">
+          <div className="text-base sm:text-lg italic text-gray-400 space-y-3 sm:space-y-4 ml-3 sm:ml-6">
             {["I'm Vedhas Naik, a passionate full-stack developer with expertise in MERN stack, Blockchain, and Data structures & algorithms. I love building seamless and efficient web applications, tackling complex problems, and continuously expanding my knowledge.",
               "When I'm not coding, you'll find me watching movies and listening to music(music is my ultimate stress buster)",
               "Life is all about balance, and I embrace every part of it with curiosity and enthusiasm. I believe in waking up every day with a drive to create, innovate, and make a difference!",
@@ -116,7 +116,7 @@ const About = () => {
 
         <motion.div 
           variants={itemVariants}
-          className="flex space-x-8 pt-6 ml-6"
+          className="flex space-x-6 sm:space-x-8 pt-4 sm:pt-6 ml-3 sm:ml-6"
         >
           {socialLinks.map((social, index) => (
             <motion.a
@@ -125,14 +125,14 @@ const About = () => {
               whileHover={{ y: -5, scale: 1.1 }}
               className={`text-gray-400 transition-colors duration-300 ${social.color}`}
             >
-              <social.icon size={24} />
+              <social.icon size={20} className="sm:w-6 sm:h-6" />
             </motion.a>
           ))}
         </motion.div>
 
         {/* Open to Work Box */}
         <motion.div
-          className="mt-10 p-4 rounded-3xl  bg-black relative overflow-hidden shadow-lg text-center"
+          className="mt-6 sm:mt-10 p-3 sm:p-4 rounded-3xl bg-black relative overflow-hidden shadow-lg text-center"
           animate={{
             boxShadow: [
               "0px 0px 20px rgba(255, 0, 0, 0.6)",
@@ -143,15 +143,15 @@ const About = () => {
           }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
         >
-          <h3 className="text-2xl  italic"> Open to Work</h3>
-          <p className="text-gray-400 mt-2 italic">Looking for exciting opportunities in software development and blockchain innovation.</p>
+          <h3 className="text-xl sm:text-2xl italic">Open to Work</h3>
+          <p className="text-gray-400 mt-2 text-sm sm:text-base italic">Looking for exciting opportunities in software development and blockchain innovation.</p>
         </motion.div>
       </div>
 
       {/* Right Side - Image */}
       <motion.div 
         variants={itemVariants}
-        className="w-2/5"
+        className="w-full sm:w-4/5 lg:w-2/5"
       >
         <PixelTransition
           firstContent={
@@ -163,7 +163,7 @@ const About = () => {
           }
           secondContent={
             <div className="w-full h-full grid place-items-center bg-black rounded-lg">
-              <p className="text-2xl font-black italic">
+              <p className="text-xl sm:text-2xl font-black italic">
                 Let's schedule a call
               </p>
             </div>

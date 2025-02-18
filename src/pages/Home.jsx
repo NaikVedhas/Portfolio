@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail,ChevronDown} from "lucide-react";
+import { Mail, ChevronDown } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -24,51 +24,51 @@ const Home = () => {
 
   return (
     <div className="bg-black min-h-screen mt-15">
-      <div className="container mx-auto px-6 pt-12">
+      <div className="container mx-auto px-4 sm:px-6 pt-8 sm:pt-12">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+          className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
         >
           {/* Left Content */}
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-8 space-y-8"
+            className="lg:col-span-8 space-y-6 sm:space-y-8"
           >
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="space-y-6"
+              className="space-y-4 sm:space-y-6"
             >
-              {/* Role Tags - Redesigned as floating pills */}
-              <div className="flex flex-wrap gap-4 mb-6">
+              {/* Role Tags */}
+              <div className="flex flex-wrap gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <motion.div
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg text-white shadow-lg shadow-blue-500/20"
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg text-white shadow-lg shadow-blue-500/20 text-sm sm:text-base"
                 >
                   Full Stack Developer
                 </motion.div>
                 <motion.div
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
-                  className="px-4 py-2 bg-gradient-to-r from-purple-600 to-purple-400 rounded-lg text-white shadow-lg shadow-purple-500/20"
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-purple-600 to-purple-400 rounded-lg text-white shadow-lg shadow-purple-500/20 text-sm sm:text-base"
                 >
                   Blockchain Enthusiast
                 </motion.div>
                 <motion.div
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
-                  className="px-4 py-2 bg-gradient-to-r from-fuchsia-600 to-pink-400 rounded-lg text-white shadow-lg shadow-pink-500/20"
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-fuchsia-600 to-pink-400 rounded-lg text-white shadow-lg shadow-pink-500/20 text-sm sm:text-base"
                 >
                   Web3 Speaker
                 </motion.div>
               </div>
 
-              <h1 className="text-5xl md:text-8xl font-bold text-white leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight">
                 <div>Between&nbsp; Logic&nbsp; &</div>
                 <div className="flex items-center gap-2">
                   <span>Creativity —</span>
@@ -87,7 +87,7 @@ const Home = () => {
                     ]}
                     animationSpeed={4}
                     showBorder={false}
-                    className="text-9xl"
+                    className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl"
                   >
                     That's
                   </GradientText>
@@ -107,13 +107,13 @@ const Home = () => {
                   ]}
                   animationSpeed={4}
                   showBorder={false}
-                  className="text-9xl inline-block"
+                  className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl inline-block"
                 >
                   Where I Build!
                 </GradientText>
               </h1>
 
-              <div className="text-xl text-gray-400 italic">
+              <div className="text-base sm:text-lg lg:text-xl text-gray-400 italic">
                 <ShinyText
                   text={`"Blockchain Head @Community of Coders || Third-year Student at VJTI College, Mumbai"`}
                   disabled={false}
@@ -132,7 +132,7 @@ const Home = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="flex space-x-6"
+              className="flex space-x-4 sm:space-x-6"
             >
               {socialLinks.map((social, index) => (
                 <motion.a
@@ -141,38 +141,38 @@ const Home = () => {
                   whileHover={{ y: -5, scale: 1.1 }}
                   className={`text-gray-400 transition-colors ${social.color}`}
                 >
-                  <social.icon size={24} />
+                  <social.icon size={20} className="sm:w-6 sm:h-6" />
                 </motion.a>
               ))}
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Redesigned Image */}
+          {/* Right Content - Image */}
           <motion.div
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-4 relative"
+            className="lg:col-span-4 relative flex justify-center lg:justify-start"
             onHoverStart={() => setIsHovered(true)}
             onHoverEnd={() => setIsHovered(false)}
           >
-            <div className="" />
             <TiltedCard
               imageSrc="/1.jpg"
               altText={"Vedhas Naik"}
               captionText={"Vedhas Naik"}
-              containerHeight="400px"
-              containerWidth="400px"
-              imageHeight="400px"
-              imageWidth="400px"
+              containerHeight="300px"
+              containerWidth="300px"
+              imageHeight="300px"
+              imageWidth="300px"
               rotateAmplitude={12}
               scaleOnHover={1.2}
               showMobileWarning={false}
               showTooltip={true}
               displayOverlayContent={true}
               overlayContent={
-                <p className="tilted-card-demo-text ">Vedhas Naik</p>
+                <p className="tilted-card-demo-text">Vedhas Naik</p>
               }
+              className="sm:containerHeight-[400px] sm:containerWidth-[400px] sm:imageHeight-[400px] sm:imageWidth-[400px]"
             />
           </motion.div>
         </motion.div>
@@ -181,15 +181,15 @@ const Home = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="flex justify-center "
+          className="flex justify-center mt-8 sm:mt-12"
         >
-          <ChevronDown className="text-gray-400 w-8 h-8" />
+          <ChevronDown className="text-gray-400 w-6 h-6 sm:w-8 sm:h-8" />
         </motion.div>
       </div>
-      <Speaker/>
+      <Speaker />
       <Projects />
       <TechStack />
-      <About/>
+      <About />
     </div>
   );
 };

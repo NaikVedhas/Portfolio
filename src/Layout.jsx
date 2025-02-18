@@ -5,23 +5,21 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hyperspeed from './store/HyperSpeed';
 import CursorTrail from "./components/CursorTrail";
+
 const Layout = () => {
   const [loading, setLoading] = useState(true);
   const [showHyperspace, setShowHyperspace] = useState(false);
   const [initialTextComplete, setInitialTextComplete] = useState(false);
 
   useEffect(() => {
-    // Show initial text for 2 seconds
     const textTimer = setTimeout(() => {
       setInitialTextComplete(true);
     }, 2000);
 
-    // Complete loading after 10 seconds
     const loadingTimer = setTimeout(() => {
       setLoading(false);
     }, 15000);
 
-    // Show hyperspace after text moves up
     const hyperspaceTimer = setTimeout(() => {
       setShowHyperspace(true);
     }, 2500);
@@ -34,18 +32,18 @@ const Layout = () => {
   }, []);
 
   return (
-    <div className="bg-black text-white">
+    <div className="bg-black text-white min-h-screen">
       <AnimatePresence>
         {loading ? (
           <motion.div 
-            className="h-screen flex flex-col relative overflow-hidden"
+            className="min-h-screen h-full flex flex-col relative overflow-hidden px-4 md:px-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
             <motion.div
-              className="text-center justify-center"
+              className="text-center justify-center w-full max-w-screen-xl mx-auto"
               initial={{ y: "50vh", translateY: "-50%" }}
               animate={{ 
                 y: initialTextComplete ? "10vh" : "50vh",
@@ -57,7 +55,7 @@ const Layout = () => {
               }}
             >
               <motion.h1 
-                className="text-2xl font-semibold italic mb-3"
+                className="text-xl sm:text-2xl font-semibold italic mb-2 sm:mb-3"
                 animate={{ scale: initialTextComplete ? 0.8 : 1 }}
                 transition={{ duration: 0.8 }}
               >
@@ -67,7 +65,7 @@ const Layout = () => {
               <AnimatePresence>
                 {initialTextComplete && (
                   <motion.p
-                    className="text text-gray-400 opacity-80"
+                    className="text-sm sm:text-base text-gray-400 opacity-80"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 0.8, y: 0 }}
                     transition={{ delay: 0.5, duration: 0.5 }}
@@ -81,7 +79,7 @@ const Layout = () => {
             <AnimatePresence>
               {showHyperspace && (
                 <motion.div
-                  className="w-full absolute inset-0 mt-6 flex items-center justify-center"
+                  className="w-full  absolute inset-0 mt-4 sm:mt-6 flex items-center justify-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1 }}
@@ -130,15 +128,17 @@ const Layout = () => {
             </AnimatePresence>
           </motion.div>
         ) : (
-          
           <motion.div
+            className="flex flex-col min-h-screen"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           > 
-          <CursorTrail />
+            <CursorTrail />
             <Navbar />
-            <Outlet />
+            <main className="flex-grow">
+              <Outlet />
+            </main>
             <Footer />
           </motion.div>
         )}
