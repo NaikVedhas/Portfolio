@@ -11,8 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
-# /src/store
-# /src/Layout.jsx
+/src/store
+/src/Layout.jsx
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
