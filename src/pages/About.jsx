@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import { Code, Terminal, Github, Linkedin, Twitter, Mail } from "lucide-react";
-import ShinyText from "../store/ShinyText";
+import {   Mail } from "lucide-react";
+import { FaXTwitter as X } from "react-icons/fa6";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import PixelTransition from "../store/PixelTransition";
 import GradientText from "../store/GradientText";
 import VariableProximity from "../store/VariableProximity";
@@ -11,16 +12,16 @@ const About = () => {
 
   const socialLinks = [
     {
-      icon: Github,
+      icon: FaGithub,
       link: "https://github.com/NaikVedhas",
       color: "hover:text-purple-500",
     },
     {
-      icon: Linkedin,
+      icon: FaLinkedin,
       link: "https://www.linkedin.com/in/vedhas-naik-005378253/",
       color: "hover:text-blue-500",
     },
-    { icon: Twitter, link: "#", color: "hover:text-sky-500" },
+    { icon: X, link: "https://x.com/NaikVedhas58616", color: "hover:text-sky-500" },
     {
       icon: Mail,
       link: "mailto:vedhasnaik121@gmail.com",
@@ -89,8 +90,7 @@ const About = () => {
           </h2>
 
           <div className="text-lg italic text-gray-400 space-y-4 ml-6">
-            {[
-              "I'm Vedhas Naik, a passionate full-stack developer with expertise in MERN stack, Blockchain, and Data structures & algorithms. I love building seamless and efficient web applications, tackling complex problems, and continuously expanding my knowledge.",
+            {["I'm Vedhas Naik, a passionate full-stack developer with expertise in MERN stack, Blockchain, and Data structures & algorithms. I love building seamless and efficient web applications, tackling complex problems, and continuously expanding my knowledge.",
               "When I'm not coding, you'll find me watching movies and listening to music(music is my ultimate stress buster)",
               "Life is all about balance, and I embrace every part of it with curiosity and enthusiasm. I believe in waking up every day with a drive to create, innovate, and make a difference!",
             ].map((text, index) => (
@@ -129,6 +129,23 @@ const About = () => {
             </motion.a>
           ))}
         </motion.div>
+
+        {/* Open to Work Box */}
+        <motion.div
+          className="mt-10 p-4 rounded-3xl  bg-black relative overflow-hidden shadow-lg text-center"
+          animate={{
+            boxShadow: [
+              "0px 0px 20px rgba(255, 0, 0, 0.6)",
+              "0px 0px 40px rgba(0, 255, 0, 1)",
+              "0px 0px 20px rgba(0, 0, 255, 0.6)",
+              "0px 0px 40px rgba(255, 0, 255, 1)",
+            ],
+          }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+        >
+          <h3 className="text-2xl  italic"> Open to Work</h3>
+          <p className="text-gray-400 mt-2 italic">Looking for exciting opportunities in software development and blockchain innovation.</p>
+        </motion.div>
       </div>
 
       {/* Right Side - Image */}
@@ -147,7 +164,7 @@ const About = () => {
           secondContent={
             <div className="w-full h-full grid place-items-center bg-black rounded-lg">
               <p className="text-2xl font-black italic">
-                Lets schedule a call
+                Let's schedule a call
               </p>
             </div>
           }
