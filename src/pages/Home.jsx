@@ -7,7 +7,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import GradientText from "../store/GradientText";
 import ShinyText from "../store/ShinyText";
 import TiltedCard from "../store/TitltedCard";
-import TechStack from "./Techstack";
+import TechStack from "./TechStack";
 import About from "./About";
 import Projects from "./Projects";
 import Speaker from "./Speaker";
