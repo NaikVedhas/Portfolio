@@ -42,6 +42,7 @@ const Hyperspeed = ({ effectOptions = {
   }
 } }) => {
   const hyperspeed = useRef(null);
+  
   useEffect(() => {
     const mountainUniforms = {
       uFreq: { value: new THREE.Vector3(3, 6, 10) },

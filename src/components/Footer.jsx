@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, ExternalLink } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import Magnet from "../store/Magnet";
-
 const Footer = () => {
   const navLinks = [
     { path: "/", label: "Home" },
@@ -15,22 +15,22 @@ const Footer = () => {
 
   const socialLinks = [
     { 
-      icon: <Github size={20} />, 
+      icon: <FaGithub size={20} />, 
       url: "https://github.com/NaikVedhas",
       label: "GitHub"
     },
     { 
-      icon: <Linkedin size={20} />, 
-      url: "https://linkedin.com/in/YourLinkedIn",
+      icon: <FaLinkedin size={20} />, 
+      url: "https://www.linkedin.com/in/vedhas-naik-005378253/",
       label: "LinkedIn"
     },
     { 
-      icon: <Twitter size={20} />, 
-      url: "https://twitter.com/YourTwitter",
-      label: "Twitter"
+      icon: <FaXTwitter size={20} />, 
+      url: "https://x.com/NaikVedhas58616",
+      label: "X"
     },
     { 
-      icon: <Mail size={20} />, 
+      icon: <FaEnvelope size={20} />, 
       url: "mailto:vedhasnaik121@gmail.com",
       label: "Email"
     }
@@ -98,7 +98,7 @@ const Footer = () => {
                   >
                     {social.icon}
                     <span>{social.label}</span>
-                    <ExternalLink size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <FaExternalLinkAlt size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   </motion.a>
                 </Magnet>
               ))}
@@ -107,7 +107,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12  border-gray-800">
+        <div className="mt-12 border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
               © {new Date().getFullYear()} Vedhas Naik All rights reserved.

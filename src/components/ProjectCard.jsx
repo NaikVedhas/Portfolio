@@ -1,6 +1,7 @@
 import React from "react";
-import { Award, Github, Star } from "lucide-react";
+import { Award,  Star } from "lucide-react";
 import TiltedCard from "../store/TitltedCard";
+import { FaGithub } from "react-icons/fa";
 
 const ProjectCard = ({ p }) => {
   return (
@@ -33,7 +34,7 @@ const ProjectCard = ({ p }) => {
             <p className="flex space-x-20">
 
             <span>{p.name}</span>
-            <Github size={35} />
+            <FaGithub size={35} />
             </p>
           </a>
         </h3>

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Clock, Calendar, Users, Link2 } from "lucide-react";
+import {  Clock, Calendar, Users, Link2 } from "lucide-react";
 
 const SpeakerSession = () => {
   return (

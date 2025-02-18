@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Code,Terminal,Github,Linkedin,Twitter,Mail,ChevronDown} from "lucide-react";
+import { Mail,ChevronDown} from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
 import GradientText from "../store/GradientText";
 import ShinyText from "../store/ShinyText";
 import TiltedCard from "../store/TitltedCard";
@@ -13,9 +16,9 @@ const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   const socialLinks = [
-    { icon: Github, link: "https://github.com/NaikVedhas", color: "hover:text-purple-500" },
-    { icon: Linkedin, link: "https://www.linkedin.com/in/vedhas-naik-005378253/", color: "hover:text-blue-500" },
-    { icon: Twitter, link: "#", color: "hover:text-sky-500" },
+    { icon: FaGithub, link: "https://github.com/NaikVedhas", color: "hover:text-purple-500" },
+    { icon: FaLinkedin, link: "https://www.linkedin.com/in/vedhas-naik-005378253/", color: "hover:text-blue-500" },
+    { icon: FaXTwitter, link: "https://x.com/NaikVedhas58616", color: "hover:text-sky-500" },
     { icon: Mail, link: "mailto:vedhasnaik121@gmail.com", color: "hover:text-red-500" },
   ];
 
@@ -110,7 +113,7 @@ const Home = () => {
                 </GradientText>
               </h1>
 
-              <p className="text-xl text-gray-400 italic">
+              <div className="text-xl text-gray-400 italic">
                 <ShinyText
                   text={`"Blockchain Head @Community of Coders || Third-year Student at VJTI College, Mumbai"`}
                   disabled={false}
@@ -121,7 +124,7 @@ const Home = () => {
                   disabled={false}
                   speed={3}
                 />
-              </p>
+              </div>
             </motion.div>
 
             {/* Social Links */}
@@ -186,7 +189,6 @@ const Home = () => {
       <Speaker/>
       <Projects />
       <TechStack />
-
       <About/>
     </div>
   );

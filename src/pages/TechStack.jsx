@@ -98,7 +98,7 @@ const TechStack = () => {
         <div className="absolute inset-0 z-20 bg-gradient-to-b from-transparent via-black/5 to-black"></div>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-4 px-50">
+      <div className="flex flex-wrap justify-center gap-4 px-50 mt-8">
         {techStack.map((tech, index) => (
           <div
             key={index}
