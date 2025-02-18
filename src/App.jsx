@@ -1,7 +1,6 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import Layout from './Layout'
 import Home from './pages/Home'
-import Contact from './pages/Contact'
 import NotFound from "./pages/NotFound";
 import About from './pages/About'
 import Projects from './pages/Projects'
@@ -17,7 +16,6 @@ function App() {
         <Route path='projects' element={<Projects/>}/>
         <Route path='speaker' element={<SpeakerSession/>}/>
         <Route path='about' element={<About/>}/>
-        <Route path='contact' element={<Contact/>}/>
         <Route  path='*' element={<NotFound/>}/>
       </Route>
     )
