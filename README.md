@@ -42,7 +42,7 @@ The portfolio is fully responsive across all devices:
 
 Feel free to reach out to me at:
 - Email: vedhasnaik121@gmail.com
-- LinkedIn: [Vedhas Naik](https://linkedin.com/in/yourprofile)
+- LinkedIn: [Vedhas Naik](https://www.linkedin.com/in/vedhas-naik-005378253/)
 - GitHub: [@NaikVedhas](https://github.com/yourusername)
 
 ## 📄 License
