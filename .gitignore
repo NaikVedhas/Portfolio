@@ -13,6 +13,8 @@ dist-ssr
 *.local
 /src/store
 /src/Layout.jsx
+/src/pages/Projects.jsx
+/src/pages/TechStack.jsx
 package.json
 # Editor directories and files
 .vscode/*

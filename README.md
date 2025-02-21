@@ -7,7 +7,7 @@ A sleek and modern portfolio showcasing my work and skills in software developme
 Visit the live portfolio: [buildwithvedhas.vercel.app](https://buildwithvedhas.vercel.app/)
 
 
-![Portfolio Preview](https://github.com/NaikVedhas/Portfolio/blob/main/src/assets/portfolio.png)
+![Portfolio Preview](https://github.com/NaikVedhas/Portfolio/blob/main/src/assets/home.png)
 
 
 ## 🚀 Features
